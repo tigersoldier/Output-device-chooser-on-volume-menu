@@ -1,0 +1,6 @@
+{
+    "shell-version": ["3.2"], 
+    "uuid": "multi-volume@tigersoldier", 
+    "name": "Volume indicator for multi-devices", 
+    "description": "Switch current sound output devices easily"
+}
