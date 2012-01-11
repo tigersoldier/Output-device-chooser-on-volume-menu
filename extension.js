@@ -282,7 +282,8 @@ function enable() {
     if (!indicator) {
         indicator = new Indicator();
     }
-    Main.panel._statusArea['volume'].destroy();
+    if (Main.panel._statusArea['volume'])
+        Main.panel._statusArea['volume'].destroy();
     Main.panel.addToStatusArea('ex-volume', indicator, 2);
 }
 
@@ -290,6 +291,6 @@ function disable() {
     if (indicator) {
         indicator.destroy();
         indicator = null;
-        Main.panel.addToStatusArea('volume', imports.ui.status.volume.Indicator(), 2);
+        Main.panel.addToStatusArea('volume', new imports.ui.status.volume.Indicator(), 2);
     }
 }
