@@ -43,6 +43,7 @@ Patcher.prototype = {
             let sinks = this._indicator._control.get_sinks();
             for (let i = 0; i < sinks.length; i++) {
                 this._maybeAddOutput(indicator._control, sinks[i].id);
+                this._maybeAddApp(indicator._control, sinks[i].id);
             }
         }
     },
@@ -187,10 +188,18 @@ Patcher.prototype = {
     },
 
     destroy: function() {
-        for (let k in this._outputMenus)
-            this._outputMenus[k].destroy();
+        var k;
+        for (k in this._outputMenus) {
+            this._maybeRemoveOutput(null, k);
+        }
         this._outputMenus = {};
         this._outputCount = 0;
+        for (k in this._appMenuItems) {
+            this._maybeRemoveApp(null, k);
+        }
+        this._appMenuItems = {};
+        this._appMenu.destroy();
+        this._appCount = 0;
         this._indicator._control.disconnect(this._addOutputId);
         this._indicator._control.disconnect(this._addAppId);
         this._indicator._control.disconnect(this._removeOutputId);
