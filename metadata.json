@@ -1,7 +1,7 @@
 {
     "shell-version": ["3.2"], 
     "uuid": "multi-volume@tigersoldier", 
-    "name": "Output device chooser on volume menu", 
-    "description": "If there are more than one sound cards, you can choose the default output device without launching Sound Settings",
+    "name": "Extended Volume Indicator", 
+    "description": "Switch output devices and adjust application volume on volume indicator menu.",
     "url": "https://github.com/tigersoldier/Output-device-chooser-on-volume-menu"
 }
