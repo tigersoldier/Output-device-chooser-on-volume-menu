@@ -1,5 +1,5 @@
 {
-    "shell-version": ["3.2"], 
+    "shell-version": ["3.2", "3.4"], 
     "uuid": "multi-volume@tigersoldier", 
     "name": "Extended Volume Indicator", 
     "description": "Switch output devices and adjust application volume on volume indicator menu.",
